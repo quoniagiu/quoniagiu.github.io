@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="家属随军政策查询与办理指南。提供随军条件、审批流程、落户安置、子女教育及医疗保障等实用信息，帮助军人家庭解决后顾之忧。">
+    <meta name="keywords" content="家属随军, 随军政策, 军人随军, 军属随迁, 随军落户">
+    <title>家属随军-军人家庭随迁安置政策与办理指南</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #1a365d; /* 深军蓝 */
+            --secondary-color: #c53030; /* 军红 */
+            --accent-color: #2b6cb0; /* 亮蓝 */
+            --bg-color: #f7fafc;
+            --card-bg: #ffffff;
+            --text-main: #2d3748;
+            --text-light: #718096;
+            --border-color: #e2e8f0;
+            --spacing-sm: 0.5rem;
+            --spacing-md: 1rem;
+            --spacing-lg: 2rem;
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            line-height: 1.6;
+            color: var(--text-main);
+            background-color: var(--bg-color);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* 布局容器 */
+        .container {
+            width: 100%;
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-lg);
+        }
+
+        /* 头部导航 */
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--secondary-color);
+        }
+
+        nav ul {
+            display: flex;
+            gap: var(--spacing-lg);
+        }
+
+        nav a {
+            color: rgba(255,255,255,0.9);
+            font-weight: 500;
+            font-size: 1rem;
+        }
+
+        nav a:hover, nav a.active {
+            color: white;
+            border-bottom: 2px solid var(--secondary-color);
+        }
+
+        /* Hero 区域 */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%);
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: var(--spacing-md);
+            font-weight: 800;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto var(--spacing-lg);
+            opacity: 0.95;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 5px;
+            font-weight: 600;
+            transition: background 0.3s, transform 0.2s;
+        }
+
+        .cta-button:hover {
+            background-color: #9b2c2c;
+            transform: translateY(-2px);
+        }
+
+        /* 核心流程卡片 */
+        .process-section {
+            padding: var(--spacing-lg) 0;
+            background-color: white;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .section-title h2 {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .section-title p {
+            color: var(--text-light);
+        }
+
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--spacing-lg);
+        }
+
+        .process-card {
+            background: var(--bg-color);
+            padding: var(--spacing-lg);
+            border-radius: 8px;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+            border-top: 4px solid var(--accent-color);
+        }
+
+        .process-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+        }
+
+        .step-number {
+            background-color: var(--primary-color);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin: 0 auto var(--spacing-md);
+        }
+
+        .process-card h3 {
+            margin-bottom: var(--spacing-sm);
+            font-size: 1.25rem;
+        }
+
+        .process-card p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        /* 政策详情区域 */
+        .policy-section {
+            padding: var(--spacing-lg) 0;
+        }
+
+        .policy-container {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: var(--spacing-lg);
+            align-items: start;
+        }
+
+        .policy-sidebar {
+            background: white;
+            padding: var(--spacing-lg);
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        .policy-sidebar h3 {
+            margin-bottom: var(--spacing-md);
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: var(--spacing-sm);
+        }
+
+        .policy-list li {
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .policy-list a {
+            display: block;
+            padding: 8px 0;
+            color: var(--text-main);
+            border-bottom: 1px dashed var(--border-color);
+        }
+
+        .policy-list a:hover {
+            color: var(--secondary-color);
+            border-bottom-style: solid;
+        }
+
+        .policy-content {
+            background: white;
+            padding: var(--spacing-lg);
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        .info-block {
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .info-block h3 {
+            color: var(--primary-color);
+            margin-bottom: var(--spacing-sm);
+            font-size: 1.3rem;
+        }
+
+        .info-block ul {
+            list-style-type: disc;
+            padding-left: 20px;
+            color: var(--text-light);
+        }
+
+        .info-block li {
+            margin-bottom: 8px;
+        }
+
+        .info-block strong {
+            color: var(--text-main);
+        }
+
+        /* 常见问题 */
+        .faq-section {
+            padding: var(--spacing-lg) 0;
+            background-color: white;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid var(--border-color);
+            padding: var(--spacing-md) 0;
+        }
+
+        .faq-question {
+            font-weight: 600;
+            font-size: 1.1rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-answer {
+            margin-top: var(--spacing-sm);
+            color: var(--text-light);
+            display: none;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        .faq-item.active .faq-question::after {
+            content: "-";
+        }
+
+        .faq-question::after {
+            content: "+";
+            font-size: 1.5rem;
+            color: var(--accent-color);
+        }
+
+        /* 页脚 */
+        footer {
+            background-color: var(--primary-color);
+            color: rgba(255,255,255,0.7);
+            padding: 40px 0;
+            margin-top: var(--spacing-lg);
+            font-size: 0.9rem;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .footer-column h4 {
+            color: white;
+            margin-bottom: 15px;
+        }
+
+        .footer-column ul li {
+            margin-bottom: 8px;
+        }
+
+        .footer-column a:hover {
+            color: white;
+        }
+
+        /* 响应式适配 */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .nav-container {
+                flex-direction: column;
+                height: auto;
+                padding: 15px 0;
+            }
+
+            nav ul {
+                margin-top: 15px;
+                gap: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .policy-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-container">
+            <div class="logo">
+                军属服务<span>指南</span>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">随军政策</a></li>
+                    <li><a href="#">落户安置</a></li>
+                    <li><a href="#">子女教育</a></li>
+                    <li><a href="#">医疗保障</a></li>
+                    <li><a href="#">政策咨询</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero 区域 -->
+        <section class="hero">
+            <div class="container">
+                <h1>家属随军政策与办理指南</h1>
+                <p>为军人家庭提供全方位的随军服务信息，涵盖条件审核、审批流程、异地落户及家属就业等关键环节，助力军人安心服役。</p>
+                <a href="#process" class="cta-button">查看办理流程</a>
+            </div>
+        </section>
+
+        <!-- 办理流程 -->
+        <section id="process" class="process-section">
+            <div class="container">
+                <div class="section-title">
+                    <h2>家属随军办理流程</h2>
+                    <p>从申请到安置的完整路径说明</p>
+                </div>
+                <div class="process-grid">
+                    <div class="process-card">
+                        <div class="step-number">1</div>
+                        <h3>资格审核</h3>
+                        <p>军人本人需符合驻地在艰苦边远地区或驻海岛、边境等特殊地区的条件，且符合随军年龄及家庭生活困难等规定。</p>
+                    </div>
+                    <div class="process-card">
+                        <div class="step-number">2</div>
+                        <h3>提交申请</h3>
+                        <p>向所在部队政治工作部门提交书面申请及相关证明材料（结婚证、身份证、无业证明等），经部队审核盖章。</p>
+                    </div>
+                    <div class="process-card">
+                        <div class="step-number">3</div>
+                        <h3>组织审批</h3>
+                        <p>由师级以上单位政治机关审批，审批通过后下达《随军批准通知》，家属方可办理随迁手续。</p>
+                    </div>
+                    <div class="process-card">
+                        <div class="step-number">4</div>
+                        <h3>落户安置</h3>
+                        <p>携带批准通知前往驻地进行落户登记，并按照属地化原则办理家属就业、子女入学及医疗保障手续。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 政策详情 -->
+        <section class="policy-section">
+            <div class="container">
+                <div class="policy-container">
+                    <!-- 侧边栏导航 -->
+                    <aside class="policy-sidebar">
+                        <h3>政策分类导航</h3>
+                        <ul class="policy-list">
+                            <li><a href="#conditions">随军条件</a></li>
+                            <li><a href="#settlement">落户安置</a></li>
+                            <li><a href="#education">子女教育</a></li>
+                            <li><a href="#health">医疗保障</a></li>
+                            <li><a href="#employment">就业安置</a></li>
+                        </ul>
+                    </aside>
+
+                    <!-- 主要内容 -->
+                    <article class="policy-content">
+                        <div id="conditions" class="info-block">
+                            <h3>随军基本条件</h3>
+                            <ul>
+                                <li><strong>驻地要求：</strong>军人本人驻地在艰苦边远地区、驻海岛、边境、高原等特殊地区，且符合国务院、中央军委规定的具体标准。</li>
+                                <li><strong>年龄限制：</strong>随军家属年龄一般不超过45周岁（具体标准以各军种最新规定为准）。</li>
+                                <li><strong>生活困难：</strong>因驻地环境特殊，军人家庭生活存在实际困难，确需随军照顾。</li>
+                            </ul>
+                        </div>
+
+                        <div id="settlement" class="info-block">
+                            <h3>落户安置政策</h3>
+                            <ul>
+                                <li><strong>落户地：</strong>随军家属落户地为军人驻地的城市市区。</li>
+                                <li><strong>落户流程：</strong>持《随军家属落户审批表》、军官证、结婚证及随军批准通知，到驻地公安部门办理。</li>
+                                <li><strong>配偶工作：</strong>对随军前有正式工作的配偶，由驻地政府根据其原工作性质和专业技术情况，尽量安排对口工作；无正式工作的，由驻地政府负责推荐就业。</li>
+                            </ul>
+                        </div>
+
+                        <div id="education" class="info-block">
+                            <h3>子女教育保障</h3>
+                            <ul>
+                                <li><strong>入学资格：</strong>随军后，子女可按驻地规定，享受与当地居民同等的义务教育入学政策。</li>
+                                <li><strong>入学便利：</strong>驻军集中的地区，通常会设立军人子女学校或开设专门班级，确保随军子女能够及时入学，不因随军变动而中断学业。</li>
+                            </ul>
+                        </div>
+
+                        <div id="health" class="info-block">
+                            <h3>医疗保障</h3>
+                            <ul>
+                                <li><strong>医疗关系：</strong>随军家属的医疗保障一般实行属地化管理，纳入驻地城镇职工基本医疗保险或居民医疗保险。</li>
+                                <li><strong>就医便利：</strong>军人医院通常对随军家属开放门诊就医或提供优先挂号服务，具体政策视驻地医疗资源情况而定。</li>
+                            </ul>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- 常见问题 -->
+        <section class="faq-section">
+            <div class="container">
+                <div class="section-title">
+                    <h2>常见问题解答</h2>
+                </div>
+                <div class="faq-list">
+                    <div class="faq-item">
+                        <div class="faq-question">随军需要多长时间审批？</div>
+                        <div class="faq-answer">审批时间因单位级别和驻地政策而异。一般流程为：个人申请 → 部队审核 → 师级以上单位审批，整个过程通常需要3-6个月，建议提前准备材料。</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">随军后配偶还能保留原工作吗？</div>
+                        <div class="faq-answer">如果随军前配偶有正式编制和单位，随军后原则上不再保留原工作，需按照属地化原则重新就业。若原单位同意并办理调动手续，可尝试协调，但需符合相关调动规定。</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">户口不在部队驻地，随军手续如何办理？</div>
+                        <div class="faq-answer">随军手续必须先获得《随军批准通知》，拿到该通知后，凭此文件到驻地公安机关办理落户。未取得批准通知前，无法直接办理异地户口迁移。</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h4>关于本站</h4>
+                    <p>本站旨在为军人及军属提供权威、实用的随军政策查询与办事指南服务。</p>
+                </div>
+                <div class="footer-column">
+                    <h4>相关链接</h4>
+                    <ul>
+                        <li><a href="#">中央军委政治工作部</a></li>
+                        <li><a href="#">退役军人事务部</a></li>
+                        <li><a href="#">各军区政策咨询</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>联系方式</h4>
+                    <ul>
+                        <li>政策咨询电话：12397</li>
+                        <li>办公时间：工作日 8:00-17:00</li>
+                    </ul>
+                </div>
+            </div>
+            <div style="margin-top: 30px; text-align: center; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px;">
+                <p>&copy; 2023 军属服务指南 版权所有</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // FAQ 手风琴效果
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqItems = document.querySelectorAll('.faq-item');
+            
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                question.addEventListener('click', () => {
+                    // 关闭其他打开的项
+                    faqItems.forEach(otherItem => {
+                        if (otherItem !== item) {
+                            otherItem.classList.remove('active');
+                        }
+                    });
+                    // 切换当前项
+                    item.classList.toggle('active');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
