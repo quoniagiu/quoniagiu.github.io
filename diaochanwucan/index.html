@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>貂蝉无惨-绝美角色原画与同人创作赏析</title>
+    <meta name="description" content="本站汇集貂蝉与无惨CP的同人原画、角色设定解析及同人小说推荐，涵盖东方Project、阴阳师及原创同人作品中的绝美演绎。">
+    <meta name="keywords" content="貂蝉无惨,同人原画,CP赏析,东方同人,阴阳师同人">
+    <style>
+        :root {
+            --bg-color: #0f0f13;
+            --card-bg: #1a1a20;
+            --text-main: #e0e0e0;
+            --text-sub: #a0a0a0;
+            --accent-red: #b83b3b;
+            --accent-gold: #d4af37;
+            --font-family: 'Segoe UI', 'Microsoft YaHei', sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font-family);
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s;
+        }
+
+        a:hover {
+            color: var(--accent-gold);
+        }
+
+        /* Header & Nav */
+        header {
+            background: rgba(15, 15, 19, 0.95);
+            border-bottom: 1px solid #333;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(10px);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--accent-gold);
+            letter-spacing: 1px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        nav a {
+            font-size: 1rem;
+            color: var(--text-sub);
+        }
+
+        nav a.active, nav a:hover {
+            color: var(--accent-gold);
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 600px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: radial-gradient(circle at center, #2a1a1a 0%, #0f0f13 70%);
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url('https://picsum.photos/seed/diaochan/1920/1080?grayscale&blur=2');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.4;
+            mix-blend-mode: overlay;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 10;
+            max-width: 800px;
+            padding: 20px;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            text-shadow: 0 4px 20px rgba(0,0,0,0.8);
+            background: linear-gradient(45deg, #ffcccc, #d4af37);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: #ccc;
+            margin-bottom: 40px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 35px;
+            background: linear-gradient(90deg, #8a1c1c, #b83b3b);
+            color: white;
+            border-radius: 50px;
+            font-weight: bold;
+            box-shadow: 0 4px 15px rgba(184, 59, 59, 0.4);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(184, 59, 59, 0.6);
+        }
+
+        /* Section Styling */
+        section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 2.2rem;
+            color: var(--text-main);
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title h2::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background: var(--accent-red);
+            margin: 10px auto 0;
+        }
+
+        .section-title p {
+            color: var(--text-sub);
+        }
+
+        /* Gallery Grid */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            overflow: hidden;
+            transition: transform 0.3s;
+            border: 1px solid #333;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-red);
+        }
+
+        .card-img {
+            width: 100%;
+            height: 350px;
+            object-fit: cover;
+            background-color: #2a2a30;
+        }
+
+        .card-body {
+            padding: 20px;
+        }
+
+        .card-tag {
+            font-size: 0.8rem;
+            color: var(--accent-gold);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        .card-title {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            color: #fff;
+        }
+
+        .card-desc {
+            font-size: 0.9rem;
+            color: var(--text-sub);
+            margin-bottom: 15px;
+        }
+
+        .card-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 1px solid #333;
+            padding-top: 15px;
+            font-size: 0.85rem;
+            color: #666;
+        }
+
+        /* Character Analysis */
+        .analysis-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .analysis-text h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: #fff;
+        }
+
+        .analysis-text p {
+            margin-bottom: 20px;
+            color: #ccc;
+        }
+
+        .analysis-list {
+            list-style: none;
+            margin-top: 20px;
+        }
+
+        .analysis-list li {
+            margin-bottom: 15px;
+            padding-left: 20px;
+            position: relative;
+            color: #bbb;
+        }
+
+        .analysis-list li::before {
+            content: '✦';
+            position: absolute;
+            left: 0;
+            color: var(--accent-red);
+        }
+
+        .analysis-img {
+            width: 100%;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            border: 1px solid #333;
+        }
+
+        /* Tags Cloud */
+        .tags-wrapper {
+            text-align: center;
+            padding: 40px 0;
+        }
+
+        .tags-cloud {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .tag {
+            padding: 8px 20px;
+            background: #25252e;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            color: var(--text-sub);
+            transition: all 0.2s;
+        }
+
+        .tag:hover {
+            background: var(--accent-red);
+            color: white;
+        }
+
+        /* Footer */
+        footer {
+            background: #0a0a0c;
+            padding: 50px 0 20px;
+            border-top: 1px solid #222;
+            text-align: center;
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        .footer-links {
+            margin-bottom: 30px;
+        }
+
+        .footer-links a {
+            margin: 0 15px;
+            color: #888;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            .nav-wrapper { flex-direction: column; height: auto; padding: 15px 0; }
+            nav ul { margin-top: 15px; gap: 15px; }
+            .analysis-container { grid-template-columns: 1fr; }
+            .gallery-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="container nav-wrapper">
+        <div class="logo">DIAOCHAN NOGHISA</div>
+        <nav>
+            <ul>
+                <li><a href="#" class="active">首页</a></li>
+                <li><a href="#gallery">原画赏析</a></li>
+                <li><a href="#analysis">角色解析</a></li>
+                <li><a href="#community">同人社区</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<main>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>貂蝉无惨</h1>
+            <p>跨越时空的绝美邂逅。在东方Project的幻想乡与《鬼灭之刃》的暗黑世界中，探索这位绝世美女与最强鬼舞辻无惨之间交织的史诗。</p>
+            <a href="#gallery" class="btn">浏览精选同人</a>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="container">
+        <div class="section-title">
+            <h2>同人原画赏析</h2>
+            <p>精选高质量同人插画与艺术创作</p>
+        </div>
+        <div class="gallery-grid">
+            <!-- Card 1 -->
+            <article class="card">
+                <img src="https://picsum.photos/seed/diao1/400/500" alt="东方同人原画" class="card-img">
+                <div class="card-body">
+                    <span class="card-tag">东方Project</span>
+                    <h3 class="card-title">红魔馆的暗夜访客</h3>
+                    <p class="card-desc">描绘了在红魔馆深夜，无惨作为不速之客造访的场景，与红魔馆的幽灵们产生微妙的互动。</p>
+                    <div class="card-footer">
+                        <span>画师: Yuki</span>
+                        <span>2.3k 观赏</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Card 2 -->
+            <article class="card">
+                <img src="https://picsum.photos/seed/diao2/400/500" alt="阴阳师同人" class="card-img">
+                <div class="card-body">
+                    <span class="card-tag">阴阳师</span>
+                    <h3 class="card-title">鬼王降临平安京</h3>
+                    <p class="card-desc">结合了阴阳师游戏机制，无惨以鬼王形态登场，貂蝉作为魅惑之术的极致代表与其对峙。</p>
+                    <div class="card-footer">
+                        <span>画师: Hanako</span>
+                        <span>1.8k 观赏</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Card 3 -->
+            <article class="card">
+                <img src="https://picsum.photos/seed/diao3/400/500" alt="原创CP" class="card-img">
+                <div class="card-body">
+                    <span class="card-tag">原创同人</span>
+                    <h3 class="card-title">永恒的凝视</h3>
+                    <p class="card-desc">无惨对永恒的追求与貂蝉对命运的抗争，在画面中形成了强烈的视觉张力。</p>
+                    <div class="card-footer">
+                        <span>画师: Studio Moon</span>
+                        <span>3.5k 观赏</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Card 4 -->
+            <article class="card">
+                <img src="https://picsum.photos/seed/diao4/400/500" alt="古风设定" class="card-img">
+                <div class="card-body">
+                    <span class="card-tag">古风设定</span>
+                    <h3 class="card-title">乱世红颜</h3>
+                    <p class="card-desc">将貂蝉置于古代战场，无惨以修罗形态出现，探讨力量与权力的博弈。</p>
+                    <div class="card-footer">
+                        <span>画师: Lin</span>
+                        <span>1.2k 观赏</span>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- Character Analysis Section -->
+    <section id="analysis" style="background-color: #15151a;">
+        <div class="container analysis-container">
+            <div class="analysis-img-wrapper">
+                <img src="https://picsum.photos/seed/diao5/600/400" alt="角色解析图" class="analysis-img">
+            </div>
+            <div class="analysis-text">
+                <h3>角色深度解析</h3>
+                <p>“貂蝉无惨”作为一个独特的同人创作概念，将中国古代四大美女之一与《鬼灭之刃》中的最终BOSS进行了跨次元的碰撞。这种组合在网络上引发了广泛的讨论与创作热潮。</p>
+                <p><strong>魅力点一：极致的对比</strong><br>貂蝉以“闭月”之貌闻名，擅长利用自身魅力影响局势；而无惨则代表着绝对的冷酷、力量与对死亡的恐惧。两者的结合产生了强烈的戏剧冲突。</p>
+                <p><strong>魅力点二：命运的抗争</strong><br>貂蝉一生身不由己，被当作政治工具；而无惨则是力量的极致追求者。在同人作品中，这种“被操控的命运”与“追求永恒的暴君”之间的对话，往往能挖掘出深刻的人性主题。</p>
+                <ul class="analysis-list">
+                    <li><strong>美学风格：</strong> 融合了东方古典美学与日式暗黑哥特风格。</li>
+                    <li><strong>常见题材：</strong> 红衣戏法、暗黑宫廷、幻境对决。</li>
+                    <li><strong>受众群体：</strong> 对二次元跨界同人、角色美学感兴趣的爱好者。</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Community/Tags Section -->
+    <section id="community" class="container">
+        <div class="section-title">
+            <h2>热门标签与社区</h2>
+            <p>探索更多相关话题与创作方向</p>
+        </div>
+        <div class="tags-wrapper">
+            <div class="tags-cloud">
+                <a href="#" class="tag">东方同人</a>
+                <a href="#" class="tag">鬼灭之刃</a>
+                <a href="#" class="tag">CP鉴赏</a>
+                <a href="#" class="tag">红衣貂蝉</a>
+                <a href="#" class="tag">暗黑风格</a>
+                <a href="#" class="tag">跨次元</a>
+                <a href="#" class="tag">同人图</a>
+                <a href="#" class="tag">插画</a>
+                <a href="#" class="tag">角色设计</a>
+            </div>
+            <p style="margin-top: 30px; color: #666; font-size: 0.9rem;">
+                相关推荐：<a href="#">阴阳师无惨同人</a> | <a href="#">东方Project同人展</a> | <a href="#">同人创作指南</a>
+            </p>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <div class="container">
+        <div class="footer-links">
+            <a href="#">关于本站</a>
+            <a href="#">投稿指南</a>
+            <a href="#">版权声明</a>
+            <a href="#">联系画师</a>
+        </div>
+        <p>&copy; 2023 DiaoChan Nogisa Fan Site. All rights reserved.</p>
+        <p style="font-size: 0.8rem; margin-top: 10px; opacity: 0.5;">
+            本站为同人非盈利性质展示平台，所有角色形象版权归原版权方所有。
+        </p>
+    </div>
+</footer>
+
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</body>
+</html>
