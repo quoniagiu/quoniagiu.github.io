@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>玛雅咒 - 神秘预言与文明密码深度解读</title>
+    <meta name="description" content="玛雅咒探索网站提供关于玛雅文明预言、水晶头骨、2012世界末日传说以及神秘符号的深度解析与历史考证。">
+    <meta name="keywords" content="玛雅咒, 玛雅预言, 玛雅文明, 水晶头骨, 2012, 古代文明">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --bg-color: #0f1115;
+            --card-bg: #1a1d24;
+            --text-main: #e0e0e0;
+            --text-muted: #a0a0a0;
+            --accent-gold: #d4af37;
+            --accent-red: #8a2be2;
+            --accent-green: #2ecc71;
+            --spacing-unit: 1rem;
+            --container-width: 1200px;
+            --font-stack: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", Arial, sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font-stack);
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s ease;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* 布局容器 */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        /* 头部导航 */
+        header {
+            background-color: rgba(15, 17, 21, 0.95);
+            border-bottom: 1px solid #333;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            padding: 1rem 0;
+            backdrop-filter: blur(10px);
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--accent-gold);
+            letter-spacing: 1px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo::before {
+            content: '🔮';
+        }
+
+        nav ul {
+            display: flex;
+            gap: 2rem;
+        }
+
+        nav a {
+            font-size: 1rem;
+            color: var(--text-muted);
+            position: relative;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--text-main);
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--accent-gold);
+            transition: width 0.3s ease;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        .search-btn {
+            background: transparent;
+            border: 1px solid #444;
+            color: var(--text-main);
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        /* Hero 区域 */
+        .hero {
+            position: relative;
+            height: 80vh;
+            min-height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            overflow: hidden;
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)), url('https://picsum.photos/seed/maya/1920/1080.jpg') no-repeat center center/cover;
+        }
+
+        .hero-content {
+            z-index: 2;
+            max-width: 800px;
+            padding: 2rem;
+            animation: fadeIn Up 1s ease-out;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(45deg, var(--accent-gold), #fff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 4px 10px rgba(0,0,0,0.5);
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            background-color: var(--accent-gold);
+            color: #000;
+            font-weight: bold;
+            border-radius: 4px;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(212, 175, 55, 0.4);
+        }
+
+        /* 通用 Section */
+        section {
+            padding: 5rem 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-header h2 {
+            font-size: 2.2rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-main);
+        }
+
+        .section-header .divider {
+            width: 60px;
+            height: 3px;
+            background-color: var(--accent-gold);
+            margin: 0 auto;
+        }
+
+        /* 玛雅咒语解析区 */
+        .ritual-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .ritual-card {
+            background-color: var(--card-bg);
+            border: 1px solid #333;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.3s, border-color 0.3s;
+        }
+
+        .ritual-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-gold);
+        }
+
+        .card-img {
+            height: 200px;
+            width: 100%;
+            object-fit: cover;
+            filter: grayscale(40%);
+            transition: filter 0.3s;
+        }
+
+        .ritual-card:hover .card-img {
+            filter: grayscale(0%);
+        }
+
+        .card-content {
+            padding: 1.5rem;
+        }
+
+        .card-tag {
+            font-size: 0.8rem;
+            color: var(--accent-gold);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .card-content h3 {
+            font-size: 1.4rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .card-content p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+        }
+
+        .read-more {
+            color: var(--accent-gold);
+            font-size: 0.9rem;
+            font-weight: bold;
+            display: inline-flex;
+            align-items: center;
+        }
+
+        .read-more::after {
+            content: '→';
+            margin-left: 5px;
+            transition: margin-left 0.2s;
+        }
+
+        .read-more:hover::after {
+            margin-left: 10px;
+        }
+
+        /* 预言时间轴 */
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 2px;
+            height: 100%;
+            background-color: #333;
+        }
+
+        .timeline-item {
+            margin-bottom: 3rem;
+            position: relative;
+            width: 50%;
+        }
+
+        .timeline-item:nth-child(odd) {
+            left: 0;
+            padding-right: 2rem;
+            text-align: right;
+        }
+
+        .timeline-item:nth-child(even) {
+            left: 50%;
+            padding-left: 2rem;
+        }
+
+        .timeline-dot {
+            position: absolute;
+            top: 0;
+            width: 16px;
+            height: 16px;
+            background-color: var(--accent-gold);
+            border-radius: 50%;
+            border: 4px solid var(--bg-color);
+            z-index: 1;
+        }
+
+        .timeline-item:nth-child(odd) .timeline-dot {
+            right: -8px;
+        }
+
+        .timeline-item:nth-child(even) .timeline-dot {
+            left: -8px;
+        }
+
+        .timeline-content {
+            background-color: var(--card-bg);
+            padding: 1.5rem;
+            border-radius: 4px;
+            border: 1px solid #333;
+        }
+
+        .timeline-year {
+            font-size: 1.5rem;
+            color: var(--accent-gold);
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        /* 常见问题 */
+        .faq-section {
+            background-color: #15171c;
+        }
+
+        .faq-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+            gap: 2rem;
+        }
+
+        .faq-item {
+            background-color: var(--card-bg);
+            border-radius: 4px;
+            padding: 1.5rem;
+        }
+
+        .faq-item h4 {
+            color: var(--text-main);
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .faq-item p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        /* 页脚 */
+        footer {
+            background-color: #0b0d10;
+            padding: 4rem 0 2rem;
+            border-top: 1px solid #222;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-col h4 {
+            color: var(--text-main);
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-col ul li a {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--accent-gold);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid #222;
+            color: #555;
+            font-size: 0.85rem;
+        }
+
+        /* 响应式适配 */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .nav-wrapper {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            nav ul {
+                gap: 1rem;
+                font-size: 0.9rem;
+            }
+
+            .timeline::before {
+                left: 20px;
+            }
+
+            .timeline-item {
+                width: 100%;
+                padding-left: 50px !important;
+                padding-right: 0 !important;
+                text-align: left !important;
+            }
+
+            .timeline-dot {
+                left: 12px !important;
+                right: auto !important;
+            }
+
+            .faq-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-wrapper">
+            <a href="#" class="logo">玛雅咒</a>
+            <nav>
+                <ul>
+                    <li><a href="#rituals" class="active">咒语解析</a></li>
+                    <li><a href="#prophecies">预言时间轴</a></li>
+                    <li><a href="#history">文明背景</a></li>
+                    <li><a href="#faq">常见疑问</a></li>
+                </ul>
+            </nav>
+            <button class="search-btn">🔍 搜索</button>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1>穿越千年的神秘呼唤</h1>
+                <p>探索玛雅咒语的古老智慧，解读水晶头骨的预言，揭开中美洲文明失落的历史密码。</p>
+                <a href="#rituals" class="cta-button">开启探索之旅</a>
+            </div>
+        </section>
+
+        <section id="rituals" class="container">
+            <div class="section-header">
+                <h2>经典咒语与仪式解析</h2>
+                <div class="divider"></div>
+                <p style="margin-top: 1rem; color: var(--text-muted);">玛雅祭司通过吟唱特定的咒语来沟通神灵、祈求丰收或预知未来。</p>
+            </div>
+
+            <div class="ritual-grid">
+                <article class="ritual-card">
+                    <img src="https://picsum.photos/seed/maya1/600/400" alt="日历石" class="card-img">
+                    <div class="card-content">
+                        <span class="card-tag">天文历法</span>
+                        <h3>长纪年历咒语</h3>
+                        <p>玛雅人拥有惊人的天文数学成就，长纪年历咒语不仅是时间的记录，更是宇宙循环周期的象征。</p>
+                        <a href="#" class="read-more">深入了解</a>
+                    </div>
+                </article>
+
+                <article class="ritual-card">
+                    <img src="https://picsum.photos/seed/maya2/600/400" alt="水晶头骨" class="card-img">
+                    <div class="card-content">
+                        <span class="card-tag">神秘传说</span>
+                        <h3>水晶头骨之歌</h3>
+                        <p>传说中十三颗水晶头骨拥有治愈世界的力量，吟唱特定的旋律可以唤醒沉睡的神器。</p>
+                        <a href="#" class="read-more">深入了解</a>
+                    </div>
+                </article>
+
+                <article class="ritual-card">
+                    <img src="https://picsum.photos/seed/maya3/600/400" alt="羽蛇神" class="card-img">
+                    <div class="card-content">
+                        <span class="card-tag">神话信仰</span>
+                        <h3>羽蛇神降临咒</h3>
+                        <p>为了祈求降雨和丰收，祭司会模仿羽蛇神的姿态吟唱，以此召唤雨神克查尔科亚特尔。</p>
+                        <a href="#" class="read-more">深入了解</a>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section id="prophecies" class="container">
+            <div class="section-header">
+                <h2>预言时间轴</h2>
+                <div class="divider"></div>
+            </div>
+
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-year">公元378年</div>
+                        <h3>特奥蒂瓦坎的陷落</h3>
+                        <p>玛雅预言了特奥蒂瓦坎古城的毁灭，这一事件被视为玛雅文明崛起的重要转折点。</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-year">公元822年</div>
+                        <h3>帕伦克城邦的废弃</h3>
+                        <p>玛雅人突然放弃了许多大型城邦，关于“玛雅咒”中的“大迁徙”预言开始流传。</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-year">2012年</div>
+                        <h3>太阳纪的终结与重生</h3>
+                        <p>根据玛雅长纪年历，这一天被视为一个周期的结束，引发了全球对于世界末日的讨论。</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-year">未来</div>
+                        <h3>第五太阳的轮回</h3>
+                        <p>预言指出，新的人类纪元即将开始，玛雅咒语中的智慧将再次指引地球文明。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="faq" class="faq-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>关于玛雅咒的常见疑问</h2>
+                    <div class="divider"></div>
+                </div>
+
+                <div class="faq-grid">
+                    <div class="faq-item">
+                        <h4>玛雅咒语真的具有预言未来的能力吗？</h4>
+                        <p>玛雅咒语更多是作为一种文化载体和历史记录，通过天文观测和数学推演来描述时间周期，而非超自然的魔法。</p>
+                    </div>
+                    <div class="faq-item">
+                        <h4>2012世界末日是真的吗？</h4>
+                        <p>不是。2012年12月21日只是玛雅长纪年历的一个循环结束，玛雅人当时正在庆祝新纪元的开始，而非预言毁灭。</p>
+                    </div>
+                    <div class="faq-item">
+                        <h4>如何理解玛雅文明中的“神谕”？</h4>
+                        <p>神谕通常由祭司通过观星、抽签或仪式解读，反映了古代玛雅人对自然力量的敬畏和对秩序的追求。</p>
+                    </div>
+                    <div class="faq-item">
+                        <h4>水晶头骨与玛雅咒有关联吗？</h4>
+                        <p>水晶头骨在玛雅文化中确实存在，但关于它们能发出咒语或拥有神力的传说更多源于西方的神秘学著作。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>关于我们</h4>
+                    <ul>
+                        <li><a href="#">网站简介</a></li>
+                        <li><a href="#">团队介绍</a></li>
+                        <li><a href="#">联系方式</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>探索频道</h4>
+                    <ul>
+                        <li><a href="#">玛雅历史</a></li>
+                        <li><a href="#">天文历法</a></li>
+                        <li><a href="#">神话传说</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>资源链接</h4>
+                    <ul>
+                        <li><a href="#">学术研究</a></li>
+                        <li><a href="#">博物馆导览</a></li>
+                        <li><a href="#">相关书籍</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>关注我们</h4>
+                    <ul>
+                        <li><a href="#">微信公众号</a></li>
+                        <li><a href="#">新浪微博</a></li>
+                        <li><a href="#">知乎专栏</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2023 玛雅咒探索站. All Rights Reserved. 本站内容仅供文化研究与科普参考.
+            </div>
+        </div>
+    </footer>
+
+</body>
+  </html>
