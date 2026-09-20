@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KARAS鸦 - 独立游戏开发者与作品展示平台</title>
+    <meta name="description" content="KARAS鸦官方网站，专注于原创独立游戏开发。探索《异界旅人》、《暗影回响》等作品，了解开发历程、游戏攻略及幕后故事。">
+    <meta name="keywords" content="KARAS鸦, 独立游戏, 游戏开发, 异界旅人, 暗影回响, 原创游戏">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --bg-dark: #0a0a0c;
+            --bg-card: #141419;
+            --text-main: #e0e0e0;
+            --text-muted: #858595;
+            --accent-primary: #ff4757; /* KARAS鸦风格色：深红/暗黑红 */
+            --accent-secondary: #2f3542;
+            --border-color: #2f3542;
+            --font-main: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font-main);
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s ease;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* 布局容器 */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* 头部导航 */
+        header {
+            background-color: rgba(10, 10, 12, 0.95);
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            color: var(--text-main);
+            display: flex;
+            align-items: center;
+        }
+
+        .logo span {
+            color: var(--accent-primary);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--accent-primary);
+        }
+
+        .btn-subscribe {
+            padding: 8px 20px;
+            border: 1px solid var(--accent-primary);
+            color: var(--accent-primary);
+            border-radius: 4px;
+            font-size: 0.9rem;
+        }
+
+        .btn-subscribe:hover {
+            background-color: var(--accent-primary);
+            color: #fff;
+        }
+
+        /* Hero 区域 */
+        .hero {
+            position: relative;
+            padding: 100px 0;
+            text-align: center;
+            overflow: hidden;
+            background: radial-gradient(circle at center, #1e1e24 0%, var(--bg-dark) 70%);
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: linear-gradient(rgba(255, 71, 87, 0.05) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(255, 71, 87, 0.05) 1px, transparent 1px);
+            background-size: 40px 40px;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            line-height: 1.2;
+            background: linear-gradient(to right, #fff, #858595);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            margin-bottom: 40px;
+        }
+
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            margin-top: 50px;
+            border-top: 1px solid var(--border-color);
+            padding-top: 30px;
+        }
+
+        .stat-item h3 {
+            font-size: 2rem;
+            color: var(--accent-primary);
+        }
+
+        .stat-item p {
+            font-size: 0.9rem;
+            margin: 0;
+        }
+
+        /* 通用板块样式 */
+        section {
+            padding: 80px 0;
+        }
+
+        .section-header {
+            margin-bottom: 50px;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background-color: var(--accent-primary);
+        }
+
+        .section-desc {
+            color: var(--text-muted);
+            max-width: 600px;
+        }
+
+        /* 作品展示区 */
+        .works-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .work-card {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .work-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            border-color: var(--accent-primary);
+        }
+
+        .work-image {
+            width: 100%;
+            height: 200px;
+            background-color: #222;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .work-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .work-card:hover .work-image img {
+            transform: scale(1.05);
+        }
+
+        .work-content {
+            padding: 25px;
+        }
+
+        .work-tag {
+            font-size: 0.75rem;
+            color: var(--accent-primary);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .work-title {
+            font-size: 1.25rem;
+            margin-bottom: 10px;
+        }
+
+        .work-desc {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+
+        .work-meta {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.85rem;
+            color: #666;
+            border-top: 1px solid var(--border-color);
+            padding-top: 15px;
+        }
+
+        /* 开发日志区 */
+        .dev-log-list {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .log-item {
+            display: flex;
+            gap: 20px;
+            padding: 20px;
+            background-color: var(--bg-card);
+            border-radius: 8px;
+            border-left: 3px solid var(--border-color);
+        }
+
+        .log-item:hover {
+            border-left-color: var(--accent-primary);
+        }
+
+        .log-date {
+            min-width: 120px;
+            font-weight: 700;
+            color: var(--text-muted);
+        }
+
+        .log-content h4 {
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+        }
+
+        .log-content p {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+        }
+
+        /* 下载专区 */
+        .download-section {
+            background-color: #15151a;
+        }
+
+        .download-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .download-info h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .download-info p {
+            color: var(--text-muted);
+            margin-bottom: 30px;
+            font-size: 1.1rem;
+        }
+
+        .feature-list li {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+
+        .feature-list li::before {
+            content: '✓';
+            color: var(--accent-primary);
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        .download-btn {
+            display: inline-block;
+            background-color: var(--accent-primary);
+            color: white;
+            padding: 15px 40px;
+            border-radius: 4px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-top: 10px;
+        }
+
+        .download-btn:hover {
+            background-color: #ff2e43;
+        }
+
+        .download-visual {
+            background-color: var(--bg-card);
+            padding: 40px;
+            border-radius: 12px;
+            text-align: center;
+            border: 1px solid var(--border-color);
+        }
+
+        .download-visual img {
+            max-width: 100%;
+            border-radius: 4px;
+            box-shadow: 0 0 20px rgba(255, 71, 87, 0.1);
+        }
+
+        /* 页脚 */
+        footer {
+            background-color: #050506;
+            padding: 60px 0 30px;
+            border-top: 1px solid var(--border-color);
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-brand h3 {
+            color: #fff;
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+
+        .footer-col h4 {
+            color: #fff;
+            margin-bottom: 20px;
+            font-size: 1rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--accent-primary);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid #1f1f24;
+        }
+
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .nav-links {
+                display: none; /* 简化处理，移动端隐藏菜单 */
+            }
+
+            .hero-stats {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .download-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-wrapper">
+            <a href="#" class="logo">KARAS<span>鸦</span></a>
+            <nav class="nav-links">
+                <a href="#works" class="active">作品展示</a>
+                <a href="#dev-log">开发日志</a>
+                <a href="#download">下载专区</a>
+                <a href="#about">关于我们</a>
+            </nav>
+            <a href="#subscribe" class="btn-subscribe">订阅更新</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container hero-content">
+                <h1>探索未知的<br>独立游戏世界</h1>
+                <p>KARAS鸦 是一个致力于打造沉浸式叙事与独特玩法体验的独立游戏工作室。我们用代码编织梦境，用像素构建传说。</p>
+                <div class="hero-btns">
+                    <a href="#works" class="btn-subscribe" style="background:var(--accent-primary); color:white; border:none;">浏览作品</a>
+                    <a href="#about" class="btn-subscribe" style="margin-left: 10px; border: 1px solid #444;">了解更多</a>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <h3>3</h3>
+                        <p>已发布作品</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>50k+</h3>
+                        <p>玩家社区</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>2</h3>
+                        <p>年度奖项提名</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Works Section -->
+        <section id="works">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">代表作品</h2>
+                    <p class="section-desc">精选我们的核心游戏项目，涵盖冒险、解谜与角色扮演等不同风格。</p>
+                </div>
+                <div class="works-grid">
+                    <!-- Work 1 -->
+                    <article class="work-card">
+                        <div class="work-image">
+                            <img src="https://picsum.photos/seed/karas1/400/300" alt="异界旅人游戏封面">
+                        </div>
+                        <div class="work-content">
+                            <span class="work-tag">角色扮演 / 冒险</span>
+                            <h3 class="work-title">异界旅人：深渊回响</h3>
+                            <p class="work-desc">在一个被遗忘的维度中，你将扮演一名拥有操控时间能力的旅人，揭开帝国覆灭的真相。</p>
+                            <div class="work-meta">
+                                <span>2023年发布</span>
+                                <a href="#" style="color:var(--accent-primary)">查看详情 &rarr;</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Work 2 -->
+                    <article class="work-card">
+                        <div class="work-image">
+                            <img src="https://picsum.photos/seed/karas2/400/300" alt="暗影回响游戏封面">
+                        </div>
+                        <div class="work-content">
+                            <span class="work-tag">解谜 / 恐怖</span>
+                            <h3 class="work-title">暗影回响</h3>
+                            <p class="work-desc">在寂静的庄园中寻找线索，解开关于家族诅咒的谜题。每一声回响都可能是致命的陷阱。</p>
+                            <div class="work-meta">
+                                <span>2022年发布</span>
+                                <a href="#" style="color:var(--accent-primary)">查看详情 &rarr;</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Work 3 -->
+                    <article class="work-card">
+                        <div class="work-image">
+                            <img src="https://picsum.photos/seed/karas3/400/300" alt="像素城市封面">
+                        </div>
+                        <div class="work-content">
+                            <span class="work-tag">模拟 / 建造</span>
+                            <h3 class="work-title">像素城市：霓虹都市</h3>
+                            <p class="work-desc">从零开始建立属于你的赛博朋克都市，管理资源，规划交通，体验数字化的繁荣。</p>
+                            <div class="work-meta">
+                                <span>2024年开发中</span>
+                                <a href="#" style="color:var(--accent-primary)">查看详情 &rarr;</a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Dev Log Section -->
+        <section id="dev-log" style="background-color: #0f0f11;">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">开发日志</h2>
+                    <p class="section-desc">记录KARAS鸦的创作历程、技术探索与项目更新。</p>
+                </div>
+                <div class="dev-log-list">
+                    <div class="log-item">
+                        <div class="log-date">2023.10.15</div>
+                        <div class="log-content">
+                            <h4>《像素城市：霓虹都市》Alpha版本测试启动</h4>
+                            <p>我们很高兴地宣布，全新的模拟建造游戏《像素城市：霓虹都市》现已开放内测申请。本次测试将重点验证城市的动态生成算法与玩家交互反馈系统。</p>
+                        </div>
+                    </div>
+                    <div class="log-item">
+                        <div class="log-date">2023.09.01</div>
+                        <div class="log-content">
+                            <h4>Unity 2023 技术栈迁移完成</h4>
+                            <p>为了提升渲染性能并支持更复杂的粒子效果，团队已完成从旧版本引擎到最新Unity LTS的迁移工作，这将极大提升游戏在移动端的运行表现。</p>
+                        </div>
+                    </div>
+                    <div class="log-item">
+                        <div class="log-date">2023.07.20</div>
+                        <div class="log-content">
+                            <h4>社区反馈总结与改进计划</h4>
+                            <p>感谢大家对于《异界旅人》DLC“失落王国”的反馈。我们根据玩家建议，优化了战斗平衡性，并新增了三种新的武器流派。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Download Section -->
+        <section id="download" class="download-section">
+            <div class="container">
+                <div class="download-grid">
+                    <div class="download-info">
+                        <h2>即刻体验<br>我们的世界</h2>
+                        <p>选择适合你的平台，下载KARAS鸦的原创作品。所有游戏均经过严格测试，确保安全稳定。</p>
+                        <ul class="feature-list">
+                            <li>Windows / macOS / Linux 全平台支持</li>
+                            <li>Steam & Itch.io 数字版购买</li>
+                            <li>包含官方原声带与美术设定集</li>
+                            <li>24小时技术支持与社区互动</li>
+                        </ul>
+                        <a href="#" class="download-btn">前往商店下载</a>
+                    </div>
+                    <div class="download-visual">
+                        <img src="https://picsum.photos/seed/karas4/500/300" alt="游戏下载界面示意">
+                        <p style="margin-top: 15px; color: #666; font-size: 0.8rem;">支持平台：Steam, Itch.io, Epic Games</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About/FAQ Section -->
+        <section id="about">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">关于 KARAS鸦</h2>
+                    <p class="section-desc">我们是谁，以及我们如何创作。</p>
+                </div>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 50px;">
+                    <article>
+                        <h3 style="margin-bottom: 15px;">创作理念</h3>
+                        <p style="color: var(--text-muted); margin-bottom: 20px;">
+                            KARAS鸦 成立于2020年，由一群热爱叙事与像素艺术的独立开发者组成。我们的核心信念是：游戏不仅是娱乐，更是表达情感与探讨哲学的媒介。我们拒绝随波逐流，坚持探索那些鲜为人知的题材与玩法机制。
+                        </p>
+                        <h3 style="margin-bottom: 15px;">技术栈</h3>
+                        <p style="color: var(--text-muted);">
+                            主要使用 Unity 引擎进行开发，辅以 C# 与 Shader Graph 实现视觉效果。美术风格融合了复古像素与现代光影渲染技术。
+                        </p>
+                    </article>
+                    <div style="background: var(--bg-card); padding: 30px; border-radius: 8px;">
+                        <h3 style="margin-bottom: 20px;">常见问题</h3>
+                        <details style="margin-bottom: 15px; cursor: pointer;">
+                            <summary style="font-weight: 600; color: #fff;">游戏支持哪些语言？</summary>
+                            <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 8px;">目前主要支持简体中文、英文，部分作品提供日文界面。</p>
+                        </details>
+                        <details style="margin-bottom: 15px; cursor: pointer;">
+                            <summary style="font-weight: 600; color: #fff;">如何成为测试玩家？</summary>
+                            <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 8px;">关注我们的官方Discord或微博，在特定活动期间填写申请表。</p>
+                        </details>
+                        <details style="cursor: pointer;">
+                            <summary style="font-weight: 600; color: #fff;">可以联系你们进行合作吗？</summary>
+                            <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 8px;">欢迎通过邮箱 contact@karas-works.com 联系商务合作事宜。</p>
+                        </details>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>KARAS<span>鸦</span></h3>
+                    <p>致力于创造独特的独立游戏体验。<br>每一个像素都承载着我们的热情。</p>
+                </div>
+                <div class="footer-col">
+                    <h4>作品</h4>
+                    <ul>
+                        <li><a href="#">异界旅人</a></li>
+                        <li><a href="#">暗影回响</a></li>
+                        <li><a href="#">像素城市</a></li>
+                        <li><a href="#">游戏下载</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>资源</h4>
+                    <ul>
+                        <li><a href="#">开发文档</a></li>
+                        <li><a href="#">素材库</a></li>
+                        <li><a href="#">API文档</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>关注我们</h4>
+                    <ul>
+                        <li><a href="#">微博</a></li>
+                        <li><a href="#">Bilibili</a></li>
+                        <li><a href="#">Steam社区</a></li>
+                        <li><a href="#">Twitter</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2024 KARAS鸦工作室. 保留所有权利. 非官方粉丝站点，仅供展示。</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+  </html>
