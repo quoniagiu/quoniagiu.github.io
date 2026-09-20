@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>牢记蜜芽新入口-正版母婴用品精选与安全购物指南</title>
+    <meta name="description" content="牢记蜜芽新入口，为您提供安全、便捷的母婴电商平台导航与正版商品选购服务。涵盖奶粉辅食、童装玩具、婴儿用品及家居安全等全品类推荐。">
+    <meta name="keywords" content="牢记蜜芽新入口, 蜜芽, 蜜芽新入口, 母婴商城, 正品母婴, 宝宝用品, 亲子购物">
+    <style>
+        :root {
+            --primary-color: #ff6b6b;
+            --secondary-color: #ff8e8e;
+            --accent-color: #4ecdc4;
+            --text-dark: #2d3436;
+            --text-gray: #636e72;
+            --bg-light: #f7f9fc;
+            --white: #ffffff;
+            --radius: 12px;
+            --shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--bg-light);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s ease;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: var(--white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 800;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo span {
+            color: var(--text-dark);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            font-weight: 500;
+            color: var(--text-dark);
+            position: relative;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--primary-color);
+        }
+
+        nav a.active::after {
+            content: '';
+            position: absolute;
+            bottom: -24px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background-color: var(--primary-color);
+        }
+
+        .header-actions {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .btn-outline {
+            padding: 8px 20px;
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        .btn-outline:hover {
+            background: var(--primary-color);
+            color: var(--white);
+        }
+
+        .btn-primary {
+            background: var(--primary-color);
+            color: var(--white);
+            padding: 8px 24px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        .btn-primary:hover {
+            background: #ff5252;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #fff0f0 0%, #ffffff 100%);
+            padding: 60px 0;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 36px;
+            margin-bottom: 16px;
+            color: var(--text-dark);
+        }
+
+        .hero h1 span {
+            color: var(--primary-color);
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: var(--text-gray);
+            margin-bottom: 30px;
+        }
+
+        .search-box {
+            position: relative;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .search-box input {
+            width: 100%;
+            padding: 16px 24px;
+            padding-right: 50px;
+            border-radius: 30px;
+            border: 2px solid #eee;
+            font-size: 16px;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+
+        .search-box input:focus {
+            border-color: var(--primary-color);
+        }
+
+        .search-box button {
+            position: absolute;
+            right: 5px;
+            top: 5px;
+            bottom: 5px;
+            width: 44px;
+            border: none;
+            background: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Categories */
+        .section {
+            padding: 60px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .section-title h2 {
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+
+        .section-title p {
+            color: var(--text-gray);
+        }
+
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .category-card {
+            background: var(--white);
+            padding: 30px 20px;
+            border-radius: var(--radius);
+            text-align: center;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+            border: 1px solid transparent;
+        }
+
+        .category-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border-color: var(--primary-color);
+        }
+
+        .category-icon {
+            width: 60px;
+            height: 60px;
+            background: #fff0f0;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 15px;
+            font-size: 24px;
+        }
+
+        .category-card h3 {
+            font-size: 16px;
+            margin-bottom: 5px;
+        }
+
+        .category-card p {
+            font-size: 12px;
+            color: var(--text-gray);
+        }
+
+        /* Featured Products */
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 30px;
+        }
+
+        .product-card {
+            background: var(--white);
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .product-image {
+            width: 100%;
+            height: 200px;
+            background-color: #f0f0f0;
+            position: relative;
+        }
+
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .badge {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background: var(--primary-color);
+            color: white;
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .product-info {
+            padding: 20px;
+        }
+
+        .product-cat {
+            font-size: 12px;
+            color: var(--text-gray);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .product-title {
+            font-size: 16px;
+            font-weight: 600;
+            margin: 8px 0;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .product-price {
+            color: var(--primary-color);
+            font-weight: 700;
+            font-size: 18px;
+        }
+
+        .product-price del {
+            color: #b2bec3;
+            font-size: 14px;
+            margin-right: 8px;
+            font-weight: 400;
+        }
+
+        .product-footer {
+            padding: 0 20px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .rating {
+            color: #f1c40f;
+            font-size: 14px;
+        }
+
+        .rating span {
+            color: var(--text-gray);
+            font-size: 12px;
+            margin-left: 4px;
+        }
+
+        .btn-sm {
+            padding: 6px 16px;
+            font-size: 13px;
+        }
+
+        /* Safety Notice */
+        .notice-section {
+            background: #fff;
+            border-left: 5px solid var(--accent-color);
+            padding: 30px;
+            border-radius: 4px;
+            margin-top: 40px;
+        }
+
+        .notice-title {
+            color: var(--accent-color);
+            font-weight: 700;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .notice-content {
+            color: var(--text-gray);
+            font-size: 15px;
+        }
+
+        /* Footer */
+        footer {
+            background: #2d3436;
+            color: #dfe6e9;
+            padding: 60px 0 20px;
+            margin-top: 60px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            color: var(--white);
+            margin-bottom: 20px;
+            font-size: 18px;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a {
+            color: #b2bec3;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--white);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #636e72;
+            font-size: 14px;
+            color: #b2bec3;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-wrapper {
+                flex-direction: column;
+                height: auto;
+                padding: 15px 0;
+            }
+
+            nav ul {
+                margin: 15px 0;
+                gap: 15px;
+                font-size: 14px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .header-actions {
+                width: 100%;
+                justify-content: center;
+                margin-top: 10px;
+            }
+
+            .hero h1 {
+                font-size: 28px;
+            }
+
+            .category-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .product-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-wrapper">
+            <a href="#" class="logo">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"></path><path d="M2 17l10 5 10-5"></path><path d="M2 12l10 5 10-5"></path></svg>
+                <span>蜜芽精选</span>
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">首页</a></li>
+                    <li><a href="#">新品上市</a></li>
+                    <li><a href="#">品质好物</a></li>
+                    <li><a href="#">品牌专区</a></li>
+                    <li><a href="#">会员服务</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <a href="#" class="btn-outline">登录</a>
+                <a href="#" class="btn-primary">注册</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container hero-content">
+                <h1>牢记蜜芽新入口<br><span>开启安全放心的母婴购物之旅</span></h1>
+                <p>汇聚全球优质母婴品牌，正品保障，直达发货。为宝宝挑选每一份成长好物。</p>
+                <div class="search-box">
+                    <input type="text" placeholder="搜索奶粉、纸尿裤、玩具...">
+                    <button type="button">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Categories -->
+        <section class="section">
+            <div class="container">
+                <div class="section-title">
+                    <h2>热门品类</h2>
+                    <p>精选母婴全场景解决方案</p>
+                </div>
+                <div class="category-grid">
+                    <div class="category-card">
+                        <div class="category-icon">🍼</div>
+                        <h3>奶粉辅食</h3>
+                        <p>营养均衡，健康成长</p>
+                    </div>
+                    <div class="category-card">
+                        <div class="category-icon">🩲</div>
+                        <h3>纸尿裤湿巾</h3>
+                        <p>干爽透气，守护肌肤</p>
+                    </div>
+                    <div class="category-card">
+                        <div class="category-icon">👕</div>
+                        <h3>童装鞋帽</h3>
+                        <p>舒适面料，时尚设计</p>
+                    </div>
+                    <div class="category-card">
+                        <div class="category-icon">🧸</div>
+                        <h3>玩具早教</h3>
+                        <p>益智启蒙，快乐成长</p>
+                    </div>
+                    <div class="category-card">
+                        <div class="category-icon">🚿</div>
+                        <h3>洗护用品</h3>
+                        <p>温和无刺激，母婴适用</p>
+                    </div>
+                    <div class="category-card">
+                        <div class="category-icon">🛏️</div>
+                        <h3>寝居家具</h3>
+                        <p>安全环保，安心睡眠</p>
+                    </div>
+                    <div class="category-card">
+                        <div class="category-icon">🚗</div>
+                        <h3>出行装备</h3>
+                        <p>便携安全，出行无忧</p>
+                    </div>
+                    <div class="category-card">
+                        <div class="category-icon">📚</div>
+                        <h3>图书绘本</h3>
+                        <p>阅读启蒙，开阔视野</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Products -->
+        <section class="section" style="background-color: #fff;">
+            <div class="container">
+                <div class="section-title">
+                    <h2>今日精选好物</h2>
+                    <p>用户口碑推荐，值得信赖的选择</p>
+                </div>
+                <div class="product-grid">
+                    <!-- Product 1 -->
+                    <article class="product-card">
+                        <div class="product-image">
+                            <span class="badge">热销</span>
+                            <img src="https://picsum.photos/seed/miya1/300/200" alt="进口有机奶粉">
+                        </div>
+                        <div class="product-info">
+                            <div class="product-cat">奶粉辅食</div>
+                            <h3 class="product-title">进口有机配方奶粉 900g*4罐装</h3>
+                            <div class="product-price">¥ 899.00</div>
+                        </div>
+                        <div class="product-footer">
+                            <div class="rating">★★★★★ <span>(1.2w+)</span></div>
+                            <a href="#" class="btn-outline btn-sm">去选购</a>
+                        </div>
+                    </article>
+
+                    <!-- Product 2 -->
+                    <article class="product-card">
+                        <div class="product-image">
+                            <span class="badge">新品</span>
+                            <img src="https://picsum.photos/seed/miya2/300/200" alt="超薄透气纸尿裤">
+                        </div>
+                        <div class="product-info">
+                            <div class="product-cat">纸尿裤湿巾</div>
+                            <h3 class="product-title">超薄透气纸尿裤 L码 128片装</h3>
+                            <div class="product-price">¥ 89.90</div>
+                        </div>
+                        <div class="product-footer">
+                            <div class="rating">★★★★☆ <span>(5000+)</span></div>
+                            <a href="#" class="btn-outline btn-sm">去选购</a>
+                        </div>
+                    </article>
+
+                    <!-- Product 3 -->
+                    <article class="product-card">
+                        <div class="product-image">
+                            <img src="https://picsum.photos/seed/miya3/300/200" alt="安抚奶嘴">
+                        </div>
+                        <div class="product-info">
+                            <div class="product-cat">玩具早教</div>
+                            <h3 class="product-title">硅胶安抚奶嘴 3个装 爱心形状</h3>
+                            <div class="product-price">¥ 39.90</div>
+                        </div>
+                        <div class="product-footer">
+                            <div class="rating">★★★★★ <span>(8000+)</span></div>
+                            <a href="#" class="btn-outline btn-sm">去选购</a>
+                        </div>
+                    </article>
+
+                    <!-- Product 4 -->
+                    <article class="product-card">
+                        <div class="product-image">
+                            <span class="badge">特价</span>
+                            <img src="https://picsum.photos/seed/miya4/300/200" alt="婴儿爬行垫">
+                        </div>
+                        <div class="product-info">
+                            <div class="product-cat">寝居家具</div>
+                            <h3 class="product-title">EVA环保材质婴儿爬行垫 5平米</h3>
+                            <div class="product-price">¥ 199.00</div>
+                        </div>
+                        <div class="product-footer">
+                            <div class="rating">★★★★☆ <span>(2000+)</span></div>
+                            <a href="#" class="btn-outline btn-sm">去选购</a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Safety Notice -->
+        <section class="container">
+            <div class="notice-section">
+                <div class="notice-title">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+                    安全购物提示
+                </div>
+                <p class="notice-content">
+                    请您务必牢记官方提供的<strong>“牢记蜜芽新入口”</strong>链接。切勿轻信非官方渠道的弹窗广告或不明链接，以免遭遇钓鱼网站，造成财产损失。我们承诺所有商品均为正品直供，支持七天无理由退换货。
+                </p>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>关于蜜芽</h4>
+                    <ul>
+                        <li><a href="#">品牌故事</a></li>
+                        <li><a href="#">联系我们</a></li>
+                        <li><a href="#">加入我们</a></li>
+                        <li><a href="#">隐私政策</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>购物指南</h4>
+                    <ul>
+                        <li><a href="#">新用户注册</a></li>
+                        <li><a href="#">支付方式</a></li>
+                        <li><a href="#">配送说明</a></li>
+                        <li><a href="#">退换货流程</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>客户服务</h4>
+                    <ul>
+                        <li><a href="#">帮助中心</a></li>
+                        <li><a href="#">常见问题</a></li>
+                        <li><a href="#">意见反馈</a></li>
+                        <li><a href="#">服务热线</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>关注我们</h4>
+                    <ul>
+                        <li><a href="#">微信公众号</a></li>
+                        <li><a href="#">新浪微博</a></li>
+                        <li><a href="#">抖音号</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 蜜芽母婴商城 版权所有 | 请牢记官方新入口链接</p>
+            </div>
+        </div>
+    </footer>
+
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</body>
+              </html>
