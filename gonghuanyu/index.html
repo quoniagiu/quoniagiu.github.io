@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="宫唤羽官方网站，提供宫唤羽个人作品集、创作理念、最新动态及粉丝互动专区，全方位了解这位才华横溢的创作者。">
+    <meta name="keywords" content="宫唤羽, 宫唤羽作品, 宫唤羽专访, 创作者官网, 宫唤羽动态">
+    <title>宫唤羽-创作者作品集与动态平台</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --accent-color: #e67e22;
+            --bg-color: #f8f9fa;
+            --card-bg: #ffffff;
+            --text-main: #333333;
+            --text-light: #666666;
+            --border-radius: 8px;
+            --spacing-unit: 1rem;
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s ease;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+            object-fit: cover;
+        }
+
+        /* Utility */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        .section-title {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            text-align: center;
+            position: relative;
+            padding-bottom: 1rem;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 4px;
+            background-color: var(--accent-color);
+            border-radius: 2px;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--card-bg);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            letter-spacing: -0.5px;
+        }
+
+        .logo span {
+            color: var(--accent-color);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 2rem;
+        }
+
+        nav a {
+            font-weight: 500;
+            color: var(--text-main);
+            font-size: 1rem;
+        }
+
+        nav a:hover {
+            color: var(--accent-color);
+        }
+
+        .cta-button {
+            background-color: var(--accent-color);
+            color: white;
+            padding: 0.5rem 1.2rem;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .cta-button:hover {
+            background-color: #d35400;
+            color: white;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
+            padding: 5rem 0;
+            text-align: center;
+            border-bottom: 1px solid #eee;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--text-light);
+            margin-bottom: 2rem;
+        }
+
+        .hero-tags {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            background-color: rgba(230, 126, 34, 0.1);
+            color: var(--accent-color);
+            padding: 0.3rem 0.8rem;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        /* About Section */
+        .about {
+            padding: 4rem 0;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .about-img {
+            width: 100%;
+            border-radius: var(--border-radius);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .about-text h2 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+
+        .about-text p {
+            margin-bottom: 1rem;
+            color: var(--text-light);
+            text-align: justify;
+        }
+
+        /* Works Section */
+        .works {
+            padding: 4rem 0;
+            background-color: #fff;
+        }
+
+        .works-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .work-card {
+            background: var(--bg-color);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .work-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+
+        .work-thumb {
+            height: 200px;
+            width: 100%;
+            background-color: #ddd;
+        }
+
+        .work-info {
+            padding: 1.5rem;
+        }
+
+        .work-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: var(--primary-color);
+        }
+
+        .work-desc {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            margin-bottom: 1rem;
+        }
+
+        .work-meta {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.8rem;
+            color: #999;
+            border-top: 1px solid #eee;
+            padding-top: 0.8rem;
+        }
+
+        /* Stats Section */
+        .stats {
+            padding: 3rem 0;
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .stats-grid {
+            display: flex;
+            justify-content: space-around;
+            text-align: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+
+        .stat-item h3 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--accent-color);
+        }
+
+        .stat-item p {
+            font-size: 1rem;
+            opacity: 0.8;
+        }
+
+        /* Contact/Newsletter */
+        .newsletter {
+            padding: 4rem 0;
+            background-color: var(--bg-color);
+        }
+
+        .newsletter-box {
+            background-color: white;
+            padding: 3rem;
+            border-radius: var(--border-radius);
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .newsletter-form {
+            display: flex;
+            margin-top: 1.5rem;
+            gap: 0.5rem;
+        }
+
+        .newsletter-input {
+            flex: 1;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            outline: none;
+        }
+
+        .newsletter-input:focus {
+            border-color: var(--accent-color);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #1a252f;
+            color: #bdc3c7;
+            padding: 3rem 0;
+            font-size: 0.9rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-col h4 {
+            color: white;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--accent-color);
+        }
+
+        .copyright {
+            text-align: center;
+            border-top: 1px solid #34495e;
+            padding-top: 2rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .nav-container {
+                flex-direction: column;
+                height: auto;
+                padding: 1rem 0;
+                gap: 1rem;
+            }
+
+            nav ul {
+                gap: 1rem;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-container">
+            <a href="#" class="logo">宫唤羽<span>.</span></a>
+            <nav>
+                <ul>
+                    <li><a href="#about">关于</a></li>
+                    <li><a href="#works">作品</a></li>
+                    <li><a href="#news">动态</a></li>
+                    <li><a href="#contact">联系</a></li>
+                </ul>
+            </nav>
+            <a href="#contact" class="cta-button">加入粉丝团</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container hero-content">
+                <div class="hero-tags">
+                    <span class="tag">创意总监</span>
+                    <span class="tag">视觉艺术家</span>
+                    <span class="tag">内容创作者</span>
+                </div>
+                <h1>探索视觉与叙事的无限可能</h1>
+                <p>欢迎来到宫唤羽的创作主页。这里汇聚了关于个人作品、设计理念及创作历程的深度内容。旨在通过艺术与文字，连接每一位热爱生活的灵魂。</p>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="about container">
+            <h2 class="section-title">关于宫唤羽</h2>
+            <div class="about-grid">
+                <div class="about-image-wrapper">
+                    <img src="https://picsum.photos/seed/gonghuanyu/600/700.jpg" alt="宫唤羽工作照" class="about-img">
+                </div>
+                <div class="about-text">
+                    <h3>专注于视觉语言的探索者</h3>
+                    <p>宫唤羽，一位在视觉设计与内容创作领域深耕多年的创作者。拥有敏锐的洞察力和独特的审美视角，擅长将抽象的情感与具象的视觉元素相结合。</p>
+                    <p>多年来，致力于通过多元化的媒介表达自我，无论是平面设计、摄影还是数字艺术，都力求在细节中寻找突破。相信艺术不仅仅是形式的堆砌，更是思想的载体。</p>
+                    <p>目前，主要专注于新媒体艺术创作与个人IP的视觉体系建设，致力于为观众提供沉浸式的观感体验。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Stats Section -->
+        <section class="stats">
+            <div class="container stats-grid">
+                <div class="stat-item">
+                    <h3>10+</h3>
+                    <p>年创作经验</p>
+                </div>
+                <div class="stat-item">
+                    <h3>50+</h3>
+                    <p>精选作品集</p>
+                </div>
+                <div class="stat-item">
+                    <h3>10k+</h3>
+                    <p>全球粉丝关注</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Works Section -->
+        <section id="works" class="works">
+            <div class="container">
+                <h2 class="section-title">精选作品</h2>
+                <div class="works-grid">
+                    <!-- Work 1 -->
+                    <article class="work-card">
+                        <div class="work-thumb" style="background-image: url('https://picsum.photos/seed/art1/400/300'); background-size: cover; background-position: center;"></div>
+                        <div class="work-info">
+                            <h3 class="work-title">都市印象系列</h3>
+                            <p class="work-desc">通过黑白摄影捕捉城市建筑与光影的交错，探讨现代都市人的内心孤寂与繁华。</p>
+                            <div class="work-meta">
+                                <span>视觉艺术</span>
+                                <span>2023</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Work 2 -->
+                    <article class="work-card">
+                        <div class="work-thumb" style="background-image: url('https://picsum.photos/seed/art2/400/300'); background-size: cover; background-position: center;"></div>
+                        <div class="work-info">
+                            <h3 class="work-title">流动的线条</h3>
+                            <p class="work-desc">数字插画作品，运用流动的线条表现时间的流逝与记忆的碎片化。</p>
+                            <div class="work-meta">
+                                <span>数字插画</span>
+                                <span>2023</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Work 3 -->
+                    <article class="work-card">
+                        <div class="work-thumb" style="background-image: url('https://picsum.photos/seed/art3/400/300'); background-size: cover; background-position: center;"></div>
+                        <div class="work-info">
+                            <h3 class="work-title">静谧时刻</h3>
+                            <p class="work-desc">静物摄影系列，聚焦于日常生活中的微小细节，展现平凡中的不凡。</p>
+                            <div class="work-meta">
+                                <span>摄影</span>
+                                <span>2022</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Work 4 -->
+                    <article class="work-card">
+                        <div class="work-thumb" style="background-image: url('https://picsum.photos/seed/art4/400/300'); background-size: cover; background-position: center;"></div>
+                        <div class="work-info">
+                            <h3 class="work-title">未来视界</h3>
+                            <p class="work-desc">概念设计稿，基于对未来城市的构想，探索科技与自然和谐共生的可能性。</p>
+                            <div class="work-meta">
+                                <span>概念设计</span>
+                                <span>2022</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- News/Updates Section -->
+        <section id="news" class="container" style="padding: 4rem 1rem;">
+            <h2 class="section-title">最新动态</h2>
+            <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+                <article style="display: flex; gap: 1.5rem; padding: 1.5rem; background: white; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); align-items: flex-start;">
+                    <div style="flex-shrink: 0; background: var(--primary-color); color: white; padding: 0.5rem 1rem; border-radius: 4px; font-weight: bold;">2023.10.15</div>
+                    <div>
+                        <h3 style="font-size: 1.2rem; margin-bottom: 0.5rem;">个人展览《虚实之间》即将开幕</h3>
+                        <p style="color: var(--text-light);">即将于上海艺术中心举办的个人展览，将展出过去十年的代表性作品，包含摄影、油画及数字装置。</p>
+                    </div>
+                </article>
+                <article style="display: flex; gap: 1.5rem; padding: 1.5rem; background: white; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); align-items: flex-start;">
+                    <div style="flex-shrink: 0; background: var(--primary-color); color: white; padding: 0.5rem 1rem; border-radius: 4px; font-weight: bold;">2023.09.01</div>
+                    <div>
+                        <h3 style="font-size: 1.2rem; margin-bottom: 0.5rem;">新书《创作的逻辑》发布</h3>
+                        <p style="color: var(--text-light);">分享多年创作心得与设计方法论，帮助创作者建立系统的视觉思维体系。</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Newsletter/Contact Section -->
+        <section id="contact" class="newsletter">
+            <div class="container">
+                <div class="newsletter-box">
+                    <h2>保持联系</h2>
+                    <p style="color: var(--text-light); margin-top: 0.5rem;">订阅邮件列表，第一时间获取最新展览资讯与作品更新。</p>
+                    <form class="newsletter-form" onsubmit="event.preventDefault(); alert('感谢您的订阅！我们已收到您的信息。');">
+                        <input type="email" class="newsletter-input" placeholder="输入您的电子邮箱" required>
+                        <button type="submit" class="cta-button">订阅</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h4>宫唤羽</h4>
+                    <p>致力于通过视觉艺术传递情感与思想。</p>
+                </div>
+                <div class="footer-col">
+                    <h4>快速链接</h4>
+                    <ul>
+                        <li><a href="#about">关于我</a></li>
+                        <li><a href="#works">作品集</a></li>
+                        <li><a href="#news">新闻动态</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>社交平台</h4>
+                    <ul>
+                        <li><a href="#">Instagram</a></li>
+                        <li><a href="#">微博</a></li>
+                        <li><a href="#">Behance</a></li>
+                        <li><a href="#">Twitter</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>联系方式</h4>
+                    <ul>
+                        <li>contact@gonghuanyu.com</li>
+                        <li>Shanghai, China</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 宫唤羽. 保留所有权利.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
