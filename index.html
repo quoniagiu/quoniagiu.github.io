@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="秘密花园入口 - 这里是一个关于自然疗愈与心灵栖息地的综合门户。提供园艺指南、森林浴路线推荐、冥想放松资源及都市绿洲打卡地图，助您寻找内心的宁静。">
+    <meta name="keywords" content="秘密花园入口, 园艺指南, 森林浴, 心灵疗愈, 冥想, 绿色生活">
+    <title>秘密花园入口-心灵栖息地与自然疗愈指南</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-green: #4a7c59;
+            --secondary-green: #8fbc8f;
+            --earth-brown: #6f4e37;
+            --cream-bg: #f9f7f2;
+            --text-dark: #2c3e30;
+            --text-light: #5f6f52;
+            --accent-gold: #d4af37;
+            --white: #ffffff;
+            --shadow-sm: 0 2px 8px rgba(0,0,0,0.05);
+            --shadow-md: 0 8px 24px rgba(74, 124, 89, 0.15);
+            --radius-md: 12px;
+            --radius-lg: 20px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "PingFang SC", "Microsoft YaHei", -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: var(--cream-bg);
+            color: var(--text-dark);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s ease;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Header & Nav */
+        header {
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-green);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo span {
+            color: var(--earth-brown);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            font-size: 1rem;
+            font-weight: 500;
+            color: var(--text-dark);
+            position: relative;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--primary-green);
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--primary-green);
+            transition: width 0.3s;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        .cta-btn {
+            background-color: var(--primary-green);
+            color: var(--white);
+            padding: 10px 24px;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+        .cta-btn:hover {
+            background-color: var(--secondary-green);
+            transform: translateY(-2px);
+            color: var(--white);
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 600px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            overflow: hidden;
+            margin-bottom: 60px;
+        }
+
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://picsum.photos/seed/garden_hero/1920/1080') no-repeat center center/cover;
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            color: var(--white);
+            max-width: 800px;
+            padding: 0 20px;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+            letter-spacing: 2px;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            margin-bottom: 40px;
+            opacity: 0.9;
+        }
+
+        .hero-btn {
+            display: inline-block;
+            background-color: var(--white);
+            color: var(--primary-green);
+            padding: 15px 40px;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .hero-btn:hover {
+            background-color: var(--accent-gold);
+            color: var(--white);
+        }
+
+        /* Quick Access Grid */
+        .access-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-bottom: 80px;
+        }
+
+        .access-card {
+            background: var(--white);
+            padding: 30px 20px;
+            border-radius: var(--radius-md);
+            text-align: center;
+            box-shadow: var(--shadow-sm);
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+            border: 1px solid transparent;
+        }
+
+        .access-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+            border-color: var(--secondary-green);
+        }
+
+        .access-icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .access-card h3 {
+            font-size: 1.1rem;
+            color: var(--text-dark);
+            margin-bottom: 8px;
+        }
+
+        .access-card p {
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+
+        /* Main Content Layout */
+        .main-layout {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 40px;
+            margin-bottom: 80px;
+        }
+
+        /* Section Styling */
+        .section-title {
+            font-size: 1.8rem;
+            color: var(--primary-green);
+            margin-bottom: 30px;
+            position: relative;
+            padding-left: 15px;
+        }
+
+        .section-title::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 5px;
+            height: 24px;
+            background-color: var(--accent-gold);
+            border-radius: 2px;
+        }
+
+        /* Garden Guide List */
+        .guide-list {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .guide-item {
+            display: flex;
+            background: var(--white);
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            transition: transform 0.3s;
+        }
+
+        .guide-item:hover {
+            transform: translateX(5px);
+        }
+
+        .guide-img {
+            width: 200px;
+            height: 150px;
+            object-fit: cover;
+            flex-shrink: 0;
+        }
+
+        .guide-content {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .guide-tag {
+            font-size: 0.8rem;
+            color: var(--accent-gold);
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-bottom: 5px;
+        }
+
+        .guide-title {
+            font-size: 1.2rem;
+            margin-bottom: 8px;
+            color: var(--text-dark);
+        }
+
+        .guide-desc {
+            font-size: 0.95rem;
+            color: var(--text-light);
+            margin-bottom: 15px;
+        }
+
+        .guide-link {
+            font-size: 0.9rem;
+            color: var(--primary-green);
+            font-weight: 600;
+            align-self: flex-start;
+        }
+
+        /* Sidebar Widget */
+        aside .widget {
+            background: var(--white);
+            padding: 25px;
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-sm);
+            margin-bottom: 30px;
+        }
+
+        .widget h3 {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            border-bottom: 2px solid var(--cream-bg);
+            padding-bottom: 10px;
+        }
+
+        .weather-widget {
+            text-align: center;
+        }
+
+        .weather-temp {
+            font-size: 3rem;
+            font-weight: 300;
+            color: var(--primary-green);
+        }
+
+        .weather-desc {
+            color: var(--text-light);
+            margin-bottom: 15px;
+        }
+
+        .mini-list li {
+            padding: 10px 0;
+            border-bottom: 1px dashed #eee;
+            font-size: 0.95rem;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .mini-list li:last-child {
+            border-bottom: none;
+        }
+
+        .mini-list span {
+            color: var(--text-light);
+        }
+
+        /* Map Section */
+        .map-section {
+            background-color: var(--white);
+            padding: 60px 0;
+            margin-bottom: 80px;
+        }
+
+        .map-container {
+            width: 100%;
+            height: 400px;
+            background-color: #eef2f3;
+            border-radius: var(--radius-lg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .map-placeholder {
+            text-align: center;
+            color: var(--text-light);
+        }
+
+        .map-placeholder img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0.8;
+        }
+
+        .map-overlay {
+            position: relative;
+            z-index: 2;
+            background: rgba(255,255,255,0.9);
+            padding: 20px 40px;
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-md);
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            max-width: 800px;
+            margin: 0 auto 80px;
+        }
+
+        details {
+            background: var(--white);
+            margin-bottom: 15px;
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-sm);
+            overflow: hidden;
+        }
+
+        summary {
+            padding: 20px;
+            cursor: pointer;
+            font-weight: 600;
+            color: var(--text-dark);
+            list-style: none;
+            position: relative;
+            padding-right: 50px;
+        }
+
+        summary::-webkit-details-marker {
+            display: none;
+        }
+
+        summary::after {
+            content: '+';
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.5rem;
+            color: var(--primary-green);
+        }
+
+        details[open] summary::after {
+            content: '-';
+        }
+
+        .faq-content {
+            padding: 0 20px 20px;
+            color: var(--text-light);
+            border-top: 1px solid #f0f0f0;
+            padding-top: 15px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary-green);
+            color: rgba(255,255,255,0.8);
+            padding: 60px 0 20px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            color: var(--white);
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--white);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-wrapper {
+                flex-direction: column;
+                height: auto;
+                padding: 15px 0;
+                gap: 15px;
+            }
+
+            nav ul {
+                gap: 15px;
+                font-size: 0.9rem;
+            }
+
+            .hero {
+                height: 450px;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .main-layout {
+                grid-template-columns: 1fr;
+            }
+
+            .guide-item {
+                flex-direction: column;
+            }
+
+            .guide-img {
+                width: 100%;
+                height: 180px;
+            }
+
+            .map-container {
+                height: 300px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-wrapper">
+            <a href="#" class="logo">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 19l7-7 3 3-7 7-3-3z"></path>
+                    <path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"></path>
+                    <path d="M2 2l7.586 7.586"></path>
+                    <circle cx="11" cy="11" r="2"></circle>
+                </svg>
+                秘密花园<span>入口</span>
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">首页</a></li>
+                    <li><a href="#guides">园艺指南</a></li>
+                    <li><a href="#routes">森林路线</a></li>
+                    <li><a href="#map">打卡地图</a></li>
+                </ul>
+            </nav>
+            <a href="#join" class="cta-btn">加入社区</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-bg"></div>
+            <div class="hero-content">
+                <h1>在喧嚣中寻找内心的宁静</h1>
+                <p>欢迎来到秘密花园入口。这里不仅是植物与自然的栖息地，更是都市人心灵疗愈的避风港。探索园艺技巧，发现身边的绿意。</p>
+                <a href="#guides" class="hero-btn">开启探索之旅</a>
+            </div>
+        </section>
+
+        <div class="container">
+            <!-- Quick Access -->
+            <section class="access-grid">
+                <div class="access-card">
+                    <span class="access-icon">🌱</span>
+                    <h3>新手入门</h3>
+                    <p>从零开始的种植指南</p>
+                </div>
+                <div class="access-card">
+                    <span class="access-icon">🌿</span>
+                    <h3>植物百科</h3>
+                    <p>识别身边的绿植朋友</p>
+                </div>
+                <div class="access-card">
+                    <span class="access-icon">🧘‍♀️</span>
+                    <h3>森林疗愈</h3>
+                    <p>都市中的自然冥想</p>
+                </div>
+                <div class="access-card">
+                    <span class="access-icon">🍂</span>
+                    <h3>季节专栏</h3>
+                    <p>顺应四时的养护智慧</p>
+                </div>
+            </section>
+
+            <!-- Main Content: Guides & Sidebar -->
+            <div class="main-layout" id="guides">
+                <section>
+                    <h2 class="section-title">热门园艺指南</h2>
+                    <div class="guide-list">
+                        <article class="guide-item">
+                            <img src="https://picsum.photos/seed/succulent/400/300" alt="多肉植物养护" class="guide-img">
+                            <div class="guide-content">
+                                <span class="guide-tag">新手必读</span>
+                                <h3 class="guide-title">多肉植物夏季养护全攻略：告别黑腐与徒长</h3>
+                                <p class="guide-desc">夏天是多肉植物最难熬的季节。本文将详细讲解如何控制浇水频率、增加通风以及遮阳技巧，帮助你的多肉安然度夏。</p>
+                                <a href="#" class="guide-link">阅读全文 →</a>
+                            </div>
+                        </article>
+
+                        <article class="guide-item">
+                            <img src="https://picsum.photos/seed/herb_garden/400/300" alt="香草种植" class="guide-img">
+                            <div class="guide-content">
+                                <span class="guide-tag">实用技巧</span>
+                                <h3 class="guide-title">阳台香草种植指南：打造你的天然调料库</h3>
+                                <p class="guide-desc">无需大面积土地，在阳台就能种植罗勒、薄荷、迷迭香等香草。本指南包含土壤配比、修剪方法和食用建议。</p>
+                                <a href="#" class="guide-link">阅读全文 →</a>
+                            </div>
+                        </article>
+
+                        <article class="guide-item">
+                            <img src="https://picsum.photos/seed/soil/400/300" alt="土壤改良" class="guide-img">
+                            <div class="guide-content">
+                                <span class="guide-tag">技术干货</span>
+                                <h3 class="guide-title">自制营养土：省钱又健康的家庭种植方案</h3>
+                                <p class="guide-desc">市面营养土价格不菲？学会利用腐叶土、珍珠岩和园土自制营养土，不仅成本低，更能根据植物需求调节酸碱度。</p>
+                                <a href="#" class="guide-link">阅读全文 →</a>
+                            </div>
+                        </article>
+                    </div>
+                </section>
+
+                <aside>
+                    <div class="widget weather-widget">
+                        <h3>今日园况</h3>
+                        <div class="weather-temp">24°C</div>
+                        <p class="weather-desc">多云转晴，微风，适合户外修剪</p>
+                        <div style="font-size: 0.9rem; color: #666;">
+                            湿度: 65% | 空气质量: 优
+                        </div>
+                    </div>
+
+                    <div class="widget">
+                        <h3>本周热点</h3>
+                        <ul class="mini-list">
+                            <li><span>秋季播种时间表</span> <span>更新</span></li>
+                            <li><span>家庭堆肥入门</span> <span>热门</span></li>
+                            <li><span>室内观叶植物推荐</span> <span>精选</span></li>
+                            <li><span>病虫害防治手册</span> <span>必读</span></li>
+                        </ul>
+                    </div>
+
+                    <div class="widget">
+                        <h3>社区活动</h3>
+                        <p style="font-size: 0.9rem; margin-bottom: 10px; color: #666;">
+                            <strong>线下聚会：</strong> 本周六下午，在市郊植物园举办“植物交换市集”，欢迎携带家中闲置植物交换。
+                        </p>
+                        <a href="#" style="font-size: 0.9rem; color: var(--primary-green); font-weight: 600;">查看详情 →</a>
+                    </div>
+                </aside>
+            </div>
+
+            <!-- Map Section -->
+            <section class="map-section" id="map">
+                <div class="container">
+                    <h2 class="section-title">周边绿洲打卡地图</h2>
+                    <div class="map-container">
+                        <img src="https://picsum.photos/seed/map_view/1200/400" alt="公园地图示意图">
+                        <div class="map-overlay">
+                            <h3>发现身边的秘密花园</h3>
+                            <p style="font-size: 0.9rem; margin-top: 5px; color: var(--text-light);">
+                                点击查看城市内 12 个最佳自然休憩点，包含详细路线导航与最佳观赏时间。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- FAQ Section -->
+            <section class="faq-section" id="join">
+                <h2 class="section-title" style="text-align: center; margin-bottom: 40px;">常见问题解答</h2>
+                
+                <details>
+                    <summary>什么是“秘密花园入口”的概念？</summary>
+                    <div class="faq-content">
+                        “秘密花园入口”并非指代某个具体的物理地点，而是一种象征性的概念。它代表了我们每个人内心渴望回归自然、寻找宁静和自我疗愈的通道。在这里，我们通过园艺、自然观察和生态生活方式，重新建立与土地和植物的连接。
+                    </div>
+                </details>
+
+                <details>
+                    <summary>新手适合种植哪些植物？</summary>
+                    <div class="faq-content">
+                        对于新手来说，建议选择生命力顽强、对环境适应能力强的植物。例如多肉植物（如玉露、桃蛋）、绿萝、虎尾兰、薄荷和罗勒等。这些植物对光照和水分的要求相对宽容，非常适合家庭阳台或窗台种植。
+                    </div>
+                </details>
+
+                <details>
+                    <summary>如何判断植物是否缺水？</summary>
+                    <div class="faq-content">
+                        最简单的方法是观察叶片状态。如果叶片发软、下垂或失去光泽，通常表示缺水。此外，用手指插入土壤约2-3厘米，如果感觉干燥，则需要浇水。但需注意，不同植物种类对水分需求差异很大，需查阅具体植物的生长习性。
+                    </div>
+                </details>
+
+                <details>
+                    <summary>网站是否提供线下活动报名？</summary>
+                    <div class="faq-content">
+                        是的。我们在“社区活动”板块会定期发布线下园艺工作坊、植物市集和户外徒步活动。您可以直接通过页面中的联系方式或相关链接进行报名。我们鼓励大家走出家门，在真实的大自然中体验园艺的乐趣。
+                    </div>
+                </details>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h4>关于秘密花园入口</h4>
+                    <p style="font-size: 0.9rem; line-height: 1.6;">
+                        我们致力于推广绿色生活方式，为城市居民提供专业的园艺建议和自然疗愈资源，让每一个家庭都能拥有一方属于自己的绿色天地。
+                    </p>
+                </div>
+                <div class="footer-col">
+                    <h4>快速链接</h4>
+                    <ul>
+                        <li><a href="#">新手指南</a></li>
+                        <li><a href="#">植物百科</a></li>
+                        <li><a href="#">在线商城</a></li>
+                        <li><a href="#">联系客服</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>联系方式</h4>
+                    <ul>
+                        <li>邮箱：contact@garden-portal.com</li>
+                        <li>电话：400-123-4567</li>
+                        <li>地址：城市绿洲大道88号</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 秘密花园入口. 保留所有权利.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+  </html>
