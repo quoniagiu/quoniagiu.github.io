@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>翰林府吃瓜-社区热点爆料与八卦资讯聚合平台</title>
+    <meta name="description" content="翰林府吃瓜专注于翰林府社区及周边的热点事件、生活爆料、邻里互动与民生资讯，提供真实、及时的八卦社区信息浏览体验。">
+    <meta name="keywords" content="翰林府吃瓜, 翰林府八卦, 社区热点, 爆料, 邻里资讯, 房产周边">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #ff4757;
+            --secondary-color: #2f3542;
+            --accent-color: #ffa502;
+            --bg-color: #f1f2f6;
+            --card-bg: #ffffff;
+            --text-main: #2f3542;
+            --text-sub: #57606f;
+            --spacing-sm: 8px;
+            --spacing-md: 16px;
+            --spacing-lg: 24px;
+            --radius: 8px;
+            --shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            padding-bottom: 40px;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        a:hover {
+            color: var(--primary-color);
+        }
+
+        /* Header & Nav */
+        header {
+            background-color: var(--card-bg);
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-md);
+            height: 64px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo span {
+            color: var(--secondary-color);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: var(--spacing-lg);
+        }
+
+        nav a {
+            font-weight: 500;
+            color: var(--text-sub);
+            font-size: 0.95rem;
+        }
+
+        nav a.active, nav a:hover {
+            color: var(--primary-color);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            background: none;
+            border: none;
+            color: var(--text-main);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #ff4757 0%, #ff6b81 100%);
+            color: white;
+            padding: 40px var(--spacing-md);
+            text-align: center;
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .hero h1 {
+            font-size: 2rem;
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .hero p {
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-md);
+            display: grid;
+            grid-template-columns: 1fr 3fr;
+            gap: var(--spacing-lg);
+        }
+
+        /* Sidebar */
+        aside {
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing-lg);
+        }
+
+        .widget {
+            background: var(--card-bg);
+            border-radius: var(--radius);
+            padding: var(--spacing-md);
+            box-shadow: var(--shadow);
+        }
+
+        .widget-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: var(--spacing-md);
+            border-left: 4px solid var(--primary-color);
+            padding-left: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .hot-list {
+            list-style: none;
+        }
+
+        .hot-list li {
+            margin-bottom: var(--spacing-sm);
+            padding-bottom: var(--spacing-sm);
+            border-bottom: 1px solid #f1f2f6;
+        }
+
+        .hot-list li:last-child {
+            border-bottom: none;
+        }
+
+        .hot-list a {
+            display: block;
+            font-size: 0.95rem;
+            color: var(--text-main);
+        }
+
+        .hot-list a:hover {
+            color: var(--primary-color);
+        }
+
+        .hot-list .rank {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            background: var(--primary-color);
+            color: white;
+            text-align: center;
+            line-height: 20px;
+            border-radius: 50%;
+            font-size: 0.8rem;
+            margin-right: 8px;
+        }
+
+        .hot-list .rank.top-1 { background: #ff4757; }
+        .hot-list .rank.top-2 { background: #ffa502; }
+        .hot-list .rank.top-3 { background: #2ed573; }
+
+        /* Filter Tabs */
+        .filter-tabs {
+            display: flex;
+            gap: var(--spacing-sm);
+            margin-bottom: var(--spacing-md);
+            overflow-x: auto;
+            padding-bottom: 4px;
+        }
+
+        .filter-btn {
+            padding: 6px 16px;
+            background: var(--card-bg);
+            border: 1px solid #dfe4ea;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            cursor: pointer;
+            white-space: nowrap;
+            transition: all 0.2s;
+        }
+
+        .filter-btn.active, .filter-btn:hover {
+            background: var(--primary-color);
+            color: white;
+            border-color: var(--primary-color);
+        }
+
+        /* News Grid */
+        .news-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: var(--spacing-lg);
+        }
+
+        .news-card {
+            background: var(--card-bg);
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: transform 0.2s;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .news-card:hover {
+            transform: translateY(-4px);
+        }
+
+        .card-image {
+            width: 100%;
+            height: 180px;
+            background-color: #eccc68;
+            position: relative;
+        }
+
+        .card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .tag {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background: rgba(0, 0, 0, 0.6);
+            color: white;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+        }
+
+        .card-content {
+            padding: var(--spacing-md);
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: var(--spacing-sm);
+            color: var(--text-main);
+            line-height: 1.4;
+        }
+
+        .card-excerpt {
+            font-size: 0.9rem;
+            color: var(--text-sub);
+            margin-bottom: var(--spacing-md);
+            flex: 1;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .card-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.8rem;
+            color: #a4b0be;
+            border-top: 1px solid #f1f2f6;
+            padding-top: 10px;
+        }
+
+        .author {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .author-avatar {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: #dfe4ea;
+        }
+
+        /* Interactive Section */
+        .interaction-section {
+            margin-top: var(--spacing-lg);
+            background: var(--card-bg);
+            padding: var(--spacing-lg);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+        }
+
+        .input-group {
+            display: flex;
+            gap: var(--spacing-sm);
+            margin-bottom: var(--spacing-md);
+        }
+
+        .input-field {
+            flex: 1;
+            padding: 10px 15px;
+            border: 1px solid #dfe4ea;
+            border-radius: var(--radius);
+            outline: none;
+            transition: border-color 0.2s;
+        }
+
+        .input-field:focus {
+            border-color: var(--primary-color);
+        }
+
+        .submit-btn {
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 0 25px;
+            border-radius: var(--radius);
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .submit-btn:hover {
+            background: #e84118;
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            margin-top: var(--spacing-lg);
+        }
+
+        .faq-item {
+            background: var(--card-bg);
+            border-radius: var(--radius);
+            margin-bottom: var(--spacing-sm);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+
+        .faq-question {
+            padding: var(--spacing-md);
+            cursor: pointer;
+            font-weight: 600;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #fff;
+        }
+
+        .faq-question::after {
+            content: '+';
+            font-size: 1.5rem;
+            color: var(--text-sub);
+        }
+
+        .faq-item.active .faq-question::after {
+            content: '-';
+        }
+
+        .faq-answer {
+            padding: 0 var(--spacing-md) var(--spacing-md);
+            color: var(--text-sub);
+            font-size: 0.95rem;
+            border-top: 1px solid #f1f2f6;
+            display: none;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        /* Footer */
+        footer {
+            margin-top: var(--spacing-lg);
+            background: var(--secondary-color);
+            color: #dcdde1;
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        .footer-content p {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            margin: 0 10px;
+            color: #dcdde1;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+
+            nav ul {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 64px;
+                left: 0;
+                width: 100%;
+                background: white;
+                padding: 20px;
+                box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            }
+
+            nav ul.show {
+                display: flex;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .hero h1 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-container">
+            <a href="#" class="logo">翰林府吃瓜<span>社区</span></a>
+            <button class="mobile-menu-btn" aria-label="菜单">☰</button>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">首页</a></li>
+                    <li><a href="#">最新爆料</a></li>
+                    <li><a href="#">邻里互助</a></li>
+                    <li><a href="#">物业直通车</a></li>
+                    <li><a href="#">关于我们</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <h1>翰林府吃瓜</h1>
+        <p>关注翰林府社区最新动态，分享生活点滴，揭露不为人知的小秘密，做翰林府最真实的观察者。</p>
+    </section>
+
+    <main class="container">
+        <!-- Sidebar -->
+        <aside>
+            <div class="widget">
+                <div class="widget-title">热门话题</div>
+                <ul class="hot-list">
+                    <li><a href="#"><span class="rank top-1">1</span>翰林府物业费调整争议</a></li>
+                    <li><a href="#"><span class="rank top-2">2</span>地下车库车位分配方案</a></li>
+                    <li><a href="#"><span class="rank top-3">3</span>业主群里的“神秘”邻居</a></li>
+                    <li><a href="#"><span class="rank">4</span>小区外卖柜遭恶意损坏</a></li>
+                    <li><a href="#"><span class="rank">5</span>某栋楼电梯频发故障</a></li>
+                </ul>
+            </div>
+
+            <div class="widget">
+                <div class="widget-title">分类导航</div>
+                <ul class="hot-list">
+                    <li><a href="#">🏠 生活琐事</a></li>
+                    <li><a href="#">🏢 楼盘动态</a></li>
+                    <li><a href="#">🚗 车辆管理</a></li>
+                    <li><a href="#">🌳 园林景观</a></li>
+                    <li><a href="#">📢 公告通知</a></li>
+                </ul>
+            </div>
+
+            <div class="widget">
+                <div class="widget-title">社区公约</div>
+                <p style="font-size: 0.85rem; color: var(--text-sub); line-height: 1.6;">
+                    请大家在爆料时注意保护个人隐私，禁止发布不实信息、广告及攻击性言论。翰林府吃瓜致力于构建和谐社区，文明上网。
+                </p>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <section class="content">
+            <div class="filter-tabs">
+                <button class="filter-btn active">全部</button>
+                <button class="filter-btn">最新</button>
+                <button class="filter-btn">热门</button>
+                <button class="filter-btn">楼栋</button>
+                <button class="filter-btn">投诉</button>
+            </div>
+
+            <div class="news-grid">
+                <!-- Article 1 -->
+                <article class="news-card">
+                    <div class="card-image">
+                        <span class="tag">生活</span>
+                        <img src="https://picsum.photos/seed/hanlin1/400/250" alt="小区环境">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">翰林府南门便利店即将倒闭？</h3>
+                        <p class="card-excerpt">据内部人士透露，该便利店因租金上涨且客流下滑，已经拖欠供应商货款多日，门口贴出了转让告示，引发业主担忧。</p>
+                        <div class="card-footer">
+                            <div class="author">
+                                <div class="author-avatar"></div>
+                                <span>匿名业主</span>
+                            </div>
+                            <span>2小时前</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Article 2 -->
+                <article class="news-card">
+                    <div class="card-image">
+                        <span class="tag">爆料</span>
+                        <img src="https://picsum.photos/seed/hanlin2/400/250" alt="夜市">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">小区夜市摊位扰民严重</h3>
+                        <p class="card-excerpt">每晚10点后，北门夜市摊贩噪音极大，且油烟直排，楼上住户苦不堪言。已有几十位业主在业主群反映，物业至今未给出明确整改时间。</p>
+                        <div class="card-footer">
+                            <div class="author">
+                                <div class="author-avatar"></div>
+                                <span>三号楼住户</span>
+                            </div>
+                            <span>4小时前</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Article 3 -->
+                <article class="news-card">
+                    <div class="card-image">
+                        <span class="tag">通知</span>
+                        <img src="https://picsum.photos/seed/hanlin3/400/250" alt="公告">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">翰林府物业关于停水通知</h3>
+                        <p class="card-excerpt">因市政管道检修，翰林府东区将于明日上午8:00至12:00暂停供水，请各位业主提前储水。请大家相互转告。</p>
+                        <div class="card-footer">
+                            <div class="author">
+                                <div class="author-avatar"></div>
+                                <span>物业管家</span>
+                            </div>
+                            <span>6小时前</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Article 4 -->
+                <article class="news-card">
+                    <div class="card-image">
+                        <span class="tag">求助</span>
+                        <img src="https://picsum.photos/seed/hanlin4/400/250" alt="宠物">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">谁家的大金毛走丢了？</h3>
+                        <p class="card-excerpt">今天下午在中心花园附近看到一只大型金毛，脖子上挂着蓝色项圈，非常温顺。主人急寻，有线索请联系...</p>
+                        <div class="card-footer">
+                            <div class="author">
+                                <div class="author-avatar"></div>
+                                <span>热心邻居</span>
+                            </div>
+                            <span>8小时前</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+
+            <div class="interaction-section">
+                <h3 style="margin-bottom: 15px; font-size: 1.2rem;">来翰林府吃瓜吧</h3>
+                <p style="margin-bottom: 15px; color: var(--text-sub);">这里是翰林府业主的发声地。无论是生活吐槽、房屋报修还是邻里互助，我们都欢迎。</p>
+                <form class="input-group" onsubmit="event.preventDefault(); alert('爆料提交成功，审核后将显示在社区中。');">
+                    <input type="text" class="input-field" placeholder="分享你的新鲜事..." required>
+                    <button type="submit" class="submit-btn">爆料</button>
+                </form>
+            </div>
+
+            <div class="faq-section">
+                <div class="widget">
+                    <div class="widget-title">常见问题 (FAQ)</div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">如何发布爆料？</div>
+                        <div class="faq-answer">点击页面顶部的“爆料”按钮，填写标题和内容，提交后由管理员审核即可发布。</div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">爆料被拒绝了怎么办？</div>
+                        <div class="faq-answer">请检查内容是否符合社区公约，如涉及人身攻击、广告或谣言，系统将自动拦截。</div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">物业的回复会在哪里看到？</div>
+                        <div class="faq-answer">针对业主投诉的官方回复，我们会标记在对应的爆料帖下方，请留意更新。</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2023 翰林府吃瓜社区. 保留所有权利.</p>
+            <div class="footer-links">
+                <a href="#">联系我们</a>
+                <a href="#">隐私政策</a>
+                <a href="#">社区公约</a>
+            </div>
+            <p style="margin-top: 15px; font-size: 0.8rem; color: #747d8c;">本站内容仅代表业主个人观点，与开发商无关</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileBtn = document.querySelector('.mobile-menu-btn');
+        const navUl = document.querySelector('nav ul');
+
+        mobileBtn.addEventListener('click', () => {
+            navUl.classList.toggle('show');
+        });
+
+        // FAQ Accordion
+        const faqItems = document.querySelectorAll('.faq-item');
+
+        faqItems.forEach(item => {
+            const question = item.querySelector('.faq-question');
+            question.addEventListener('click', () => {
+                // Close other items
+                faqItems.forEach(otherItem => {
+                    if (otherItem !== item) {
+                        otherItem.classList.remove('active');
+                    }
+                });
+                // Toggle current item
+                item.classList.toggle('active');
+            });
+        });
+
+        // Filter Tabs Interaction
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>
